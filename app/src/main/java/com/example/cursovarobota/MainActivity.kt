@@ -25,10 +25,6 @@ class MainActivity : AppCompatActivity() {
         binding.recycleViewTransports.layoutManager = LinearLayoutManager(this)
         binding.recycleViewTransports.adapter = customAdapter
 
-        customAdapter.onItemRemoved = { transport ->
-            sharedViewModel.removeTransport(transport)
-        }
-
         sharedViewModel.transportList.observe(this) { transportList ->
             customAdapter.updateList(transportList)
         }
@@ -40,20 +36,21 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-    private fun showFragment() {
-        binding.fragmentContainer.visibility = View.VISIBLE
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, AddTransportFragment())
-            .addToBackStack(null)
-            .commit()
 
+    private fun showFragment() {
+        binding.fragmentContainer.visibility = View.VISIBLE  // ← додай це
+        val fragment = AddTransportFragment()
+        supportFragmentManager.beginTransaction()
+            .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
+            .replace(R.id.fragment_container, fragment)
+            .commit()
         isFragmentVisible = true
     }
 
 
     fun onFragmentClosed() {
         binding.fabAdd.show()
-        binding.fragmentContainer.visibility = View.GONE
+        binding.fragmentContainer.visibility = View.GONE     // ← додай це
         isFragmentVisible = false
     }
 
