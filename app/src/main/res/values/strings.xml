@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">cursovarobota</string>
+    <string name="add">Add</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="choose_your_type_of_transport">Choose your type of transport</string>
+    <string name="car">Car</string>
+    <string name="minibus">Minibus</string>
+    <string name="motorcycle">Motorcycle</string>
+    <string name="enter_the_name_of_transport">Enter the name of transport</string>
+    <string name="save_info_about_transport">Save info about transport</string>
+    <string name="type_transport">Type of transport: </string>
+    <string name="name_of_the_item_transport">Name of transport: </string>
+    <string name="choose_your_type_of_event">Choose your type of event</string>
+    <string name="repair">Repair</string>
+    <string name="trip">Trip</string>
+    <string name="service">Service</string>
+    <string name="save_info_about_event">Save info about event</string>
+    <string name="image_of_transport">Image of Transport</string>
+    <string name="transport">Transport</string>
+</resources>
